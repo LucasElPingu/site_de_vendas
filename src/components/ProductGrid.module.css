@@ -1,0 +1,31 @@
+@reference "tailwindcss";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+.emptyWrap {
+  @apply w-full flex items-center justify-center py-16;
+}
+.emptyCard {
+  @apply border border-black/10 dark:border-white/10 rounded-xl p-8 text-center bg-white dark:bg-black;
+}
+.emptyTitle {
+  @apply text-lg font-semibold;
+}
+.emptyText {
+  @apply text-sm opacity-80;
+}

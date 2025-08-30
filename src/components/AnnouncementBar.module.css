@@ -1,0 +1,4 @@
+@reference "tailwindcss";
+
+.announce { @apply w-full bg-pink-600 text-white text-center; }
+.text { @apply mx-auto max-w-6xl px-4 py-2 text-sm font-medium; }
