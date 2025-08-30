@@ -1,8 +1,0 @@
-@reference "tailwindcss";
-
-.catalogSection {
-  @apply mx-auto max-w-6xl px-4;
-}
-.controlsWrap {
-  @apply flex flex-col gap-3 my-6;
-}
