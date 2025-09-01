@@ -17,8 +17,8 @@ export default function CatalogClient({ products }: { products: Product[] }) {
   const filtered = useMemo(() => products.filter((p) => p.category === active), [products, active]);
 
   return (
-    <div className="w-full px-3 md:px-6">
-      <div className="mt-6 flex justify-center">
+    <div className={styles.pageWrap}>
+      <div className={styles.tabsRow}>
         <div className={styles.tabs} role="tablist" aria-label="Categorias do catálogo">
           {categories.map((c) => (
             <button

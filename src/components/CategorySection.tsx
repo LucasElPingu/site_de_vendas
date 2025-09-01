@@ -4,24 +4,26 @@ export default function CategorySection({
   title,
   description,
   divider,
+  center,
   children,
 }: {
   title: string;
   description?: string;
   divider?: boolean;
+  center?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <section className={divider ? styles.sectionWithDivider : undefined}>
-      <div className="flex items-end justify-between">
-        <div>
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">{title}</h2>
+      <div className={center ? styles.headerCentered : styles.headerRow}>
+        <div className={center ? styles.headerCentered : undefined}>
+          <h2 className={styles.title}>{title}</h2>
           {description ? (
-            <p className="text-white/60 text-sm md:text-base mt-1 max-w-2xl">{description}</p>
+            <p className={`${styles.desc} ${center ? styles.descCentered : ""}`}>{description}</p>
           ) : null}
         </div>
       </div>
-      <div className="mt-6">{children}</div>
+      <div className={styles.content}>{children}</div>
     </section>
   );
 }

@@ -1,0 +1,67 @@
+.section {
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+@media (min-width: 768px) {
+  .section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.bannerSection {
+  width: 100%;
+  margin-top: 0;
+}
+
+.mtXs {
+  margin-top: 8px;
+}
+.mtSm {
+  margin-top: 24px;
+}
+.mtLg {
+  margin-top: 64px;
+}
+
+.headlineBar {
+  width: 100%;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.titleCentered {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: 22px;
+}
+@media (min-width: 768px) {
+  .titleCentered {
+    font-size: 28px;
+  }
+}
+
+.gridWrap {
+  background: transparent;
+  border-radius: 2px;
+}
+.gridWrapAlt {
+  background: #3c3c3c;
+  border-radius: 2px;
+  padding: 8px;
+}
+
+.gridProducts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .gridProducts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}

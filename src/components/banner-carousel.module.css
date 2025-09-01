@@ -1,7 +1,8 @@
 .carouselWrapper {
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 0 0 rgba(255,255,255,0.05);
+  border-radius: 2px;
+  overflow: hidden;
   transition: box-shadow 250ms ease, border-color 250ms ease;
 }
 
@@ -9,3 +10,58 @@
   border-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 24px 0 rgba(255,255,255,0.06);
 }
+
+.scroller {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.scroller::-webkit-scrollbar { display: none; }
+.scroller { scrollbar-width: none; }
+
+.slide {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+  background: #000;
+  scroll-snap-align: center;
+  aspect-ratio: 21 / 9; /* menor altura em telas médias+ */
+}
+
+@media (max-width: 768px) {
+  .slide { aspect-ratio: 16 / 9; }
+}
+
+.image { object-fit: cover; }
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0.1), transparent);
+}
+
+.navWrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  pointer-events: none;
+}
+
+.navBtn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+.navBtn:hover { background: rgba(255,255,255,0.92); transform: translateY(-1px); }
+.navBtn:disabled { opacity: 0.5; cursor: not-allowed; }

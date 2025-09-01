@@ -1,27 +1,29 @@
 @import "tailwindcss";
 
-/* 🎨 Variáveis globais */
 :root {
   --background: #000000;
   --foreground: #ffffff;
 }
 
-/* 🖌️ Fonte customizada */
-@font-face {
-  font-family: "GraffitiCity";
-  src: url("/fonts/GraffitiCity.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
-/* 📦 Estilos globais */
+@font-face {
+  font-family: "Maples";
+  src: url("/fonts/Jersey M54.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "GraffitiCity";
+  font-family: 'Franklin Gothic Medium';
 }
 
-/* Classe utilitária opcional */
-.font-graffiti {
-  font-family: "GraffitiCity", Arial, Helvetica, sans-serif;
-}
+.container { max-width: 1200px; }

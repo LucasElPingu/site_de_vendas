@@ -1,6 +1,8 @@
+import BannerCarousel from "@/components/BannerCarousel";
 import CategorySection from "@/components/CategorySection";
 import ProductCard from "@/components/ProductCard";
 import CarouselClientOnly from "@/components/CarouselClientOnly";
+import homeStyles from "./home.module.css";
 
 const highlights = [
   {
@@ -44,21 +46,21 @@ const highlights = [
 export default function HomePage() {
   return (
     <div>
-      <section className="w-full px-0 mt-0">
+      <section className={homeStyles.bannerSection}>
         <CarouselClientOnly />
       </section>
 
-      <section className="mt-4">
-        <div className="w-full py-8 md:py-12 border-y border-white/10">
-          <h1 className="text-center text-3xl md:text-6xl leading-tight">Nova era. Nova energia. mesma essência.</h1>
+      <section className={homeStyles.mtXs}>
+        <div className={homeStyles.headlineBar}>
+          <h1 className={`${homeStyles.titleCentered} ${homeStyles.graffitiTitle}`}>Nova era. Nova energia. mesma essência.</h1>
         </div>
       </section>
 
-      <section className="w-full px-3 md:px-6 mt-8">
+      <section className={`${homeStyles.section} ${homeStyles.mtSm}`}>
         <div>
-          <h2 className="text-2xl md:text-3xl tracking-tight">NOVA ERA, MESMA ATITUDE</h2>
+          <h2 className={`${homeStyles.titleCentered} ${homeStyles.graffitiTitle}`}>NOVA ERA, MESMA ATITUDE</h2>
         </div>
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className={homeStyles.gridProducts}>
           {highlights.map((p) => (
             <ProductCard key={p.id} product={{
               id: p.id,
@@ -74,9 +76,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="w-full px-3 md:px-6 mt-16">
-        <CategorySection title="ESTILO SEM RÓTULOS">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      <section className={`${homeStyles.section} ${homeStyles.mtLg}`}>
+        <CategorySection title="ESTILO SEM RÓTULOS" center>
+          <div className={homeStyles.gridProducts}>
             {highlights.slice(0, 4).map((p) => (
               <ProductCard key={`v-${p.id}`} product={{
                 id: p.id,
@@ -93,9 +95,9 @@ export default function HomePage() {
         </CategorySection>
       </section>
 
-      <section className="w-full px-3 md:px-6 mt-16">
-        <CategorySection title="ONDE A MODA VIROU MOVIMENTO">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      <section className={`${homeStyles.section} ${homeStyles.mtLg}`}>
+        <CategorySection title="ONDE A MODA VIROU MOVIMENTO" center>
+          <div className={homeStyles.gridProducts}>
             {highlights.slice(0, 4).map((p) => (
               <ProductCard key={`m-${p.id}`} product={{
                 id: p.id,

@@ -47,30 +47,30 @@ export default function BannerCarousel() {
   };
 
   return (
-    <div className={`${styles.carouselWrapper} rounded-sm overflow-hidden mt-0 relative`} suppressHydrationWarning>
-      <div ref={scroller} className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div className={styles.carouselWrapper} suppressHydrationWarning>
+      <div ref={scroller} className={styles.scroller}>
         {slides.map((s, idx) => (
-          <div key={idx} className="relative w-full shrink-0 snap-center aspect-[16/9] bg-black">
+          <div key={idx} className={styles.slide}>
             <Image
               src={s.src}
               alt={s.alt}
               fill
               priority={idx === 0}
               sizes="100vw"
-              className="object-cover"
+              className={styles.image}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+            <div className={styles.overlay} />
           </div>
         ))}
       </div>
 
-      <div className="pointer-events-none absolute inset-y-0 left-0 right-0 flex items-center justify-between p-2">
+      <div className={styles.navWrap}>
         <button
           type="button"
           aria-label="Anterior"
           onClick={prev}
           disabled={slides.length <= 1}
-          className="pointer-events-auto inline-flex items-center justify-center w-9 h-9 rounded-full bg-white border border-white shadow-md hover:bg-white/90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+          className={styles.navBtn}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15.5 19 8.5 12l7-7" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
@@ -79,7 +79,7 @@ export default function BannerCarousel() {
           aria-label="Próximo"
           onClick={next}
           disabled={slides.length <= 1}
-          className="pointer-events-auto inline-flex items-center justify-center w-9 h-9 rounded-full bg-white border border-white shadow-md hover:bg-white/90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+          className={styles.navBtn}
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 5 15.5 12l-7 7" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
