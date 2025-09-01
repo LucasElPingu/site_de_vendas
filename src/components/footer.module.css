@@ -1,34 +1,167 @@
+/* Estilos do rodapé: mantêm o fundo escuro e uma borda sutil no topo
+   Comentários adicionados para facilitar manutenção futura */
 .footerRoot {
+  /* Fundo preto para manter contraste com o conteúdo */
   background: #000;
+  /* Linha superior suave para separar o rodapé do conteúdo anterior */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  max-height: 12rem;
 }
 
-.socialLink {
-  display: inline-flex;
-  width: 36px;
-  height: 36px;
+/* Container centralizado: controla a largura máxima e o respiro interno */
+.footerContainer {
+  /* Limita a largura para uma leitura confortável em telas grandes */
+  max-width: 80%;
+  /* Centraliza o conteúdo horizontalmente */
+  margin: 0 auto;
+  /* Respiro interno superior e inferior do rodapé */
+}
+
+/* Linha superior com três colunas: esquerda (texto), centro (logo), direita (redes) */
+.topRow {
+  /* Layout em grid para garantir centralização exata da logo */
+  display: grid;
+  /* Espaço entre os blocos para evitar colisões visuais */
+  gap: 1.5rem;
+  /* Em telas pequenas, conteúdo empilhado em uma coluna */
+  grid-template-columns: 1fr;
+  /* Alinhamento vertical dos itens */
+  align-items: center;
+  /* Centraliza os itens em telas pequenas */
+  justify-items: center;
+}
+
+/* Em telas médias para cima, usar 3 colunas: esquerda 1fr, centro auto, direita 1fr */
+@media (min-width: 768px) {
+  .topRow {
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: stretch;
+  }
+}
+
+/* Bloco esquerdo: identidade da marca (título e slogan) */
+.leftBlock {
+  /* Alinha o bloco ao início da célula (coluna esquerda) */
+  justify-self: start;
+  /* Garante alinhamento à esquerda do texto */
+  text-align: left;
+  margin-bottom: 6rem;
+}
+
+/* Título da marca: fonte e tamanho destacados */
+.brandTitle {
+  /* Mantém a tipografia definida para a marca */
+  font-family: "SpaceTime", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  /* Tamanhos responsivos para boa hierarquia visual */
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+  /* Peso para destacar o título */
+  font-weight: 600;
+  /* Compensa a leitura em fundo escuro */
+  color: #fff;
+  /* Ajuste fino do espaçamento entre letras */
+  letter-spacing: -0.01em;
+  /* Remove margens padrão indesejadas */
+  margin: 0;
+}
+
+/* Slogan da marca: complemento do título com contraste reduzido */
+.brandTagline {
+  /* Cor com menor ênfase para diferenciar do título */
+  color: rgba(255, 255, 255, 0.7);
+  /* Espaço acima para separar do título */
+  margin-top: 0.5rem;
+  /* Limita largura para melhorar legibilidade de frases longas */
+  max-width: 42rem;
+  /* Tamanho de fonte confortável em diferentes telas */
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+}
+
+/* Bloco central para a logo: garante centralização visual */
+.centerLogo {
+  /* Centraliza a imagem exatamente no centro do grid */
+  justify-self: center;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Imagem da logo com tamanho ampliado em relação ao padrão */
+.logoImage {
+  /* Aumenta o tamanho da logo */
+  width: 14rem;
+  height: 14rem;
+  /* Mantém a proporção e cobre a área definida */
+  object-fit: cover;
+  /* Remove eventuais distorções de layout inline */
+  display: block;
+}
+
+/* Em telas grandes */
+@media (min-width: 1024px) {
+  .logoImage {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+/* Bloco direito: redes sociais alinhadas à direita */
+.rightBlock {
+  /* Alinha o bloco ao final da célula (coluna direita) */
+  justify-self: end;
+  /* Mantém os ícones em linha e alinhados ao final */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* Espaço consistente entre os ícones */
+  gap: 1rem;
+  margin-bottom: 6rem;
+}
+
+/* Link dos ícones sociais: caixa interativa com foco e hover */
+.socialLink {
+  /* Tamanho do alvo de toque/click acessível */
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Borda sutil para delimitar o ícone em fundo escuro */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Canto levemente arredondado */
   border-radius: 2px;
+  /* Transições suaves para feedback visual */
   transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
-.textLogo {
-  font-family: "SpaceTime";
+/* Efeitos de interação nos ícones sociais (hover e foco visível) */
+.socialLink:hover,
+.socialLink:focus-visible {
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-.fontFormat{
-  font-family: "external font";
-}
-.logoImage {
+/* Linha inferior com CTA à esquerda e direitos autorais à direita */
+.bottomRow {
+  /* Espaçamento superior para separar da linha anterior */
+  margin-bottom: 1.3rem;
+  /* Layout em coluna para telas pequenas */
   display: flex;
-  width: 12rem;
-  height: 12rem;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
-.socialLink:hover, .socialLink:focus-visible {
-  border-color: rgba(255,255,255,0.6);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+/* Em telas médias, distribuir os itens nas extremidades */
+@media (min-width: 640px) {
+  .bottomRow {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Texto de direitos autorais com ênfase reduzida */
+.copyrightText {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem; /* 12px para rodapé */
 }

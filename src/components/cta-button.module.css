@@ -1,12 +1,49 @@
+/* Botão de chamada para ação (CTA)
+   Comentários em PT-BR para facilitar manutenção futura */
 .cta {
+  /* Layout inline flex para alinhar ícone e texto lado a lado */
+  display: inline-flex;
+  /* Centraliza vertical e horizontalmente o conteúdo do botão */
+  align-items: center;
+  justify-content: center;
+  /* Espaçamento interno equivalente a px-4 py-2 */
+  padding: 0.5rem 1rem;
+  /* Espaço entre ícone e texto (gap-2) */
+  gap: 0.5rem;
+
+  /* Visual do botão: fundo claro com texto escuro */
   color: #000;
   background: #fff;
   border: 1px solid #fff;
-  transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  /* Bordas levemente arredondadas (rounded-sm) */
+  border-radius: 0.125rem;
+
+  /* Tamanho de fonte base (text-sm) */
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  /* Transições suaves para interação */
+  transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
 }
 
+/* Em telas médias, aumenta a legibilidade (md:text-base) */
+@media (min-width: 768px) {
+  .cta {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* Efeito ao passar o mouse para dar feedback visual */
 .cta:hover {
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.92);
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Estilo de foco visível para acessibilidade no teclado */
+.cta:focus-visible {
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
