@@ -1,4 +1,3 @@
-import BannerCarousel from "@/components/BannerCarousel";
 import CategorySection from "@/components/CategorySection";
 import ProductCard from "@/components/ProductCard";
 import CarouselClientOnly from "@/components/CarouselClientOnly";
