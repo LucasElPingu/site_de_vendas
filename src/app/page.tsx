@@ -48,66 +48,67 @@ export default function HomePage() {
       <section className={homeStyles.bannerSection}>
         <CarouselClientOnly />
       </section>
-
-      <section className={homeStyles.mtXs}>
-        <div className={homeStyles.headlineBar}>
-          <h1 className={`${homeStyles.titleCentered} ${homeStyles.graffitiTitle}`}>Nova era. Nova energia. mesma essência.</h1>
-        </div>
-      </section>
-
-      <section className={`${homeStyles.section} ${homeStyles.mtSm}`}>
-        <div>
-          <h2 className={`${homeStyles.titleCentered} ${homeStyles.graffitiTitle}`}>NOVA ERA, MESMA ATITUDE</h2>
-        </div>
-        <div className={homeStyles.gridProducts}>
-          {highlights.map((p) => (
-            <ProductCard key={p.id} product={{
-              id: p.id,
-              name: p.name,
-              price: p.price,
-              description: "",
-              image: p.image,
-              linkWhatsApp: p.linkWhatsApp,
-              category: "Unisex",
-              available: true,
-            }} />
-          ))}
-        </div>
-      </section>
-
-      <section className={`${homeStyles.section} ${homeStyles.mtLg}`}>
-        <CategorySection title="ESTILO SEM RÓTULOS" center>
+      <section className={`${homeStyles.section} ${homeStyles.topSpace}`}>
+        <CategorySection title="NOVA ERA, MESMA ATITUDE" center>
           <div className={homeStyles.gridProducts}>
-            {highlights.slice(0, 4).map((p) => (
-              <ProductCard key={`v-${p.id}`} product={{
-                id: p.id,
-                name: p.name,
-                price: p.price,
-                description: "",
-                image: p.image,
-                linkWhatsApp: p.linkWhatsApp,
-                category: "Unisex",
-                available: true,
-              }} />
+            {highlights.map((p) => (
+              <ProductCard
+                key={p.id}
+                product={{
+                  id: p.id,
+                  name: p.name,
+                  price: p.price,
+                  description: "",
+                  image: p.image,
+                  linkWhatsApp: p.linkWhatsApp,
+                  category: "Unisex",
+                  available: true,
+                }}
+              />
             ))}
           </div>
         </CategorySection>
       </section>
 
-      <section className={`${homeStyles.section} ${homeStyles.mtLg}`}>
+      <section className={`${homeStyles.section} ${homeStyles.topSpace}`}>
+        <CategorySection title="ESTILO SEM RÓTULOS" center>
+          <div className={homeStyles.gridProducts}>
+            {highlights.slice(0, 4).map((p) => (
+              <ProductCard
+                key={`v-${p.id}`}
+                product={{
+                  id: p.id,
+                  name: p.name,
+                  price: p.price,
+                  description: "",
+                  image: p.image,
+                  linkWhatsApp: p.linkWhatsApp,
+                  category: "Unisex",
+                  available: true,
+                }}
+              />
+            ))}
+          </div>
+        </CategorySection>
+      </section>
+
+      <section className={`${homeStyles.section} ${homeStyles.topSpace}`}>
         <CategorySection title="ONDE A MODA VIROU MOVIMENTO" center>
           <div className={homeStyles.gridProducts}>
             {highlights.slice(0, 4).map((p) => (
-              <ProductCard key={`m-${p.id}`} product={{
-                id: p.id,
-                name: p.name,
-                price: p.price,
-                description: "",
-                image: p.image,
-                linkWhatsApp: p.linkWhatsApp,
-                category: "Unisex",
-                available: true,
-              }} />
+              <ProductCard
+                key={`m-${p.id}`}
+                product={{
+                  id: p.id,
+                  name: p.name,
+                  price: p.price,
+                  description: "",
+                  image: p.image,
+                  linkWhatsApp: p.linkWhatsApp,
+                  category: "Unisex",
+                  available: true,
+                }}
+              />
             ))}
           </div>
         </CategorySection>

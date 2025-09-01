@@ -27,3 +27,11 @@ body {
 }
 
 .container { max-width: 1200px; }
+
+
+@font-face {
+  font-family: "external font";
+  src: url("/fonts/ELEGANT TYPEWRITER Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}

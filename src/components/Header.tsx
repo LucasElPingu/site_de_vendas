@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import styles from "./header.module.css";
-import Brand from "./Brand";
 
 export default function Header() {
   return (
@@ -9,7 +8,7 @@ export default function Header() {
       <div className={styles.headerInner}>
         <div className={styles.brand}>
           <Link href="/" className={styles.brand}>
-            <Brand />
+            <h1 className={styles.brandTxt}>CAN SAY</h1>
           </Link>
         </div>
         <nav className={styles.nav}>

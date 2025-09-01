@@ -34,7 +34,7 @@ export default function CatalogClient({ products }: { products: Product[] }) {
         </div>
       </div>
 
-      <div className="mt-8">
+      <div>
         <CategorySection title={active} divider>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {filtered.map((p) => (

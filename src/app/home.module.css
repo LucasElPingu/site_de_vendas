@@ -2,6 +2,7 @@
   width: 100%;
   padding-left: 12px;
   padding-right: 12px;
+  font-family: "external font";
 }
 @media (min-width: 768px) {
   .section {
@@ -15,14 +16,9 @@
   margin-top: 0;
 }
 
-.mtXs {
-  margin-top: 8px;
-}
-.mtSm {
-  margin-top: 24px;
-}
-.mtLg {
-  margin-top: 64px;
+.topSpace{
+    margin-top: 36px;
+    margin-bottom: 36;
 }
 
 .headlineBar {
@@ -30,18 +26,6 @@
   padding: 32px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.titleCentered {
-  text-align: center;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  font-size: 22px;
-}
-@media (min-width: 768px) {
-  .titleCentered {
-    font-size: 28px;
-  }
 }
 
 .gridWrap {
